@@ -10,7 +10,7 @@ module.exports = class MessageCenter {
   get currentDataSize() {
     return this.end >= this.start
       ? this.end - this.start
-      : this.cacheSize - (this.start - this.end) 
+      : this.cacheSize - (this.start - this.end);
   }
 
   data(listener) {
@@ -84,6 +84,6 @@ module.exports = class MessageCenter {
     }
 
     this.emit(data);
-    setTimeout(() => this.decode());
+    this.decode();
   }
 }
